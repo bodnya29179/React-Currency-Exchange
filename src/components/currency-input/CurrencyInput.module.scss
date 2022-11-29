@@ -1,0 +1,31 @@
+@import 'src/styles/variables';
+
+.container {
+  position: relative;
+}
+
+.amount {
+  display: block;
+  width: 100%;
+  padding: 20px 20px 50px;
+
+  color: $grey-300;
+  font-size: $font-xxl;
+  font-weight: 500;
+
+  border: 1px solid $grey-100;
+  border-radius: 8px;
+
+  &:focus {
+    border-color: $purple;
+  }
+}
+
+.label {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+
+  color: $grey-200;
+  font-size: $font-m;
+}

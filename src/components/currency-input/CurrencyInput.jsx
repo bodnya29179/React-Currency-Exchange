@@ -1,9 +1,11 @@
 import React from 'react';
+import classes from './CurrencyInput.module.scss';
 
-const CurrencyInput = () => {
+const CurrencyInput = ({ label }) => {
   return (
-    <div>
-
+    <div className={classes.container}>
+      <input className={classes.amount} type="text"/>
+      <span className={classes.label}>{label}</span>
     </div>
   );
 };
