@@ -18,6 +18,14 @@ const CurrencyExchange = () => {
     setLabelTo(buildExchangeLabel(currencyTo, currencyFrom));
   }, [currencyFrom, currencyTo]);
 
+  const reverseCurrencies = () => {
+    const from = currencyFrom;
+    const to = currencyTo;
+
+    setCurrencyFrom(to);
+    setCurrencyTo(from);
+  };
+
   return (
     <div className={classes.container}>
       <div className={classes.currencyExchange}>
@@ -31,7 +39,7 @@ const CurrencyExchange = () => {
       </div>
 
       <div className={classes.reverseBtn}>
-        <CustomButton/>
+        <CustomButton clickCallback={reverseCurrencies.bind(this)}/>
       </div>
 
       <div className={classes.currencyExchange}>

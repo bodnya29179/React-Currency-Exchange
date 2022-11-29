@@ -1,11 +1,10 @@
 import React from 'react';
 import { HiOutlineArrowsRightLeft } from 'react-icons/hi2';
 import classes from './CustomButton.module.scss';
-// import './CustomButton.modules.scss';
 
-const CustomButton = () => {
+const CustomButton = ({ clickCallback }) => {
   return (
-    <button className={classes.btn}>
+    <button className={classes.btn} onClick={clickCallback}>
       <HiOutlineArrowsRightLeft/>
     </button>
   );

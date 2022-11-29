@@ -25,7 +25,9 @@ const CurrencySelect = ({ items, itemClickCallback, defaultSelectedValue }) => {
 
   useEffect(() => {
     randomKey = uuidv4();
+  }, []);
 
+  useEffect(() => {
     let selectedIndex = 0;
 
     if (defaultSelectedValue) {
@@ -33,7 +35,7 @@ const CurrencySelect = ({ items, itemClickCallback, defaultSelectedValue }) => {
     }
 
     changeInputValues(selectedIndex);
-  }, []);
+  }, [defaultSelectedValue]);
 
   return (
     <div
