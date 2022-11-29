@@ -1,0 +1,12 @@
+@import 'src/styles/variables';
+
+.btn {
+  display: flex;
+
+  color: $grey-200;
+  background-color: $grey-100;
+  font-size: $font-l;
+
+  padding: 10px;
+  border-radius: 6px;
+}
