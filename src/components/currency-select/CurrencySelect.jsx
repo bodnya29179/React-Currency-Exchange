@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import classes from './CurrencySelect.module.scss';
+import { v4 as uuidv4 } from 'uuid';
 
-const CurrencySelect = ({ items, itemClickCallback, selectedIndex = 0 }) => {
+const CurrencySelect = ({ items, itemClickCallback, defaultSelectedValue }) => {
+  let randomKey;
   const numberOfItems = Object.values(items).length;
 
   const [inputValues, setInputValues] = useState(
@@ -22,9 +24,15 @@ const CurrencySelect = ({ items, itemClickCallback, selectedIndex = 0 }) => {
   };
 
   useEffect(() => {
-    const isNonExistentIndex = selectedIndex >= numberOfItems;
+    randomKey = uuidv4();
 
-    changeInputValues(isNonExistentIndex ? 0 : selectedIndex);
+    let selectedIndex = 0;
+
+    if (defaultSelectedValue) {
+      selectedIndex = Object.values(items).findIndex((item) => item === defaultSelectedValue);
+    }
+
+    changeInputValues(selectedIndex);
   }, []);
 
   return (
@@ -39,7 +47,7 @@ const CurrencySelect = ({ items, itemClickCallback, selectedIndex = 0 }) => {
               {items[key]}
 
               <input
-                name="currency"
+                name={randomKey}
                 type="radio"
                 value={items[key]}
                 checked={inputValues[index]}
