@@ -4,6 +4,7 @@ import CurrencySelect from '../currency-select/CurrencySelect';
 import CurrencyInput from '../currency-input/CurrencyInput';
 import { CURRENCIES } from '../../constants';
 import { buildExchangeLabel } from '../../utils';
+import CustomButton from '../custom-button/CustomButton';
 
 const CurrencyExchange = () => {
   const [currencyFrom, setCurrencyFrom] = useState(CURRENCIES.uah);
@@ -27,6 +28,10 @@ const CurrencyExchange = () => {
         />
 
         <CurrencyInput label={labelFrom}/>
+      </div>
+
+      <div className={classes.reverseBtn}>
+        <CustomButton/>
       </div>
 
       <div className={classes.currencyExchange}>
