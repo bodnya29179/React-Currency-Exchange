@@ -1,8 +1,14 @@
 @import 'src/styles/variables';
 
+.container {
+  display: grid;
+}
+
 .currencyItem {
   display: inline-block;
+
   color: $dark-grey;
+  text-align: center;
 
   font-size: $font-l;
   font-weight: 500;

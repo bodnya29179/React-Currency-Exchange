@@ -28,7 +28,10 @@ const CurrencySelect = ({ items, itemClickCallback, selectedIndex = 0 }) => {
   }, []);
 
   return (
-    <div>
+    <div
+      className={classes.container}
+      style={{ gridTemplateColumns: Array(numberOfItems).fill('1fr').join(' ') }}
+    >
       {
         Object.keys(items)
           .map((key, index) => (
