@@ -1,3 +1,5 @@
+@import 'src/styles/variables';
+
 .container {
   display: flex;
   justify-content: center;
@@ -18,4 +20,14 @@
 .reverseBtn {
   align-self: center;
   padding-top: 60px;
+}
+
+@media screen and (max-width: $screen-size-s) {
+  .container {
+    flex-direction: column;
+  }
+
+  .reverseBtn {
+    padding-top: 0;
+  }
 }
