@@ -3,6 +3,7 @@ import classes from './CurrencyExchange.module.scss';
 import CurrencySelect from '../currency-select/CurrencySelect';
 import CurrencyInput from '../currency-input/CurrencyInput';
 import CustomButton from '../custom-button/CustomButton';
+import Label from '../label/Label';
 import { CURRENCIES, CURRENCY_RATES } from '../../constants';
 import { buildExchangeLabel, buildRateKey } from '../../utils';
 
@@ -60,6 +61,8 @@ const CurrencyExchange = () => {
   return (
     <div className={classes.container}>
       <div className={classes.currencyExchange}>
+        <Label text={'I have'}/>
+
         <CurrencySelect
           items={CURRENCIES}
           defaultSelectedValue={currencyFrom}
@@ -78,6 +81,8 @@ const CurrencyExchange = () => {
       </div>
 
       <div className={classes.currencyExchange}>
+        <Label text={'I want to buy'}/>
+
         <CurrencySelect
           items={CURRENCIES}
           defaultSelectedValue={currencyTo}

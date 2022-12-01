@@ -1,0 +1,8 @@
+@import 'src/styles/variables';
+
+.label {
+  display: block;
+  color: $grey-200;
+  font-size: $font-m;
+  font-weight: 500;
+}
